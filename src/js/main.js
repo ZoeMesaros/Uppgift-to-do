@@ -1,5 +1,5 @@
-let toDo = ["Gå ut med hunden", "Laga mat", "Vattna blommorna", "Tvätta"]
-let listitem = document.getElementById('myList')
+const toDo = ["Gå ut med hunden", "Laga mat", "Vattna blommorna", "Tvätta"]
+const listitem = document.getElementById('myList')
 
 function handletodo (e) {
 e.target.style.textDecoration = "line-through"
