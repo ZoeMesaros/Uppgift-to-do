@@ -1,4 +1,4 @@
-const toDo = ["Gå ut med hunden", "Laga mat", "Vattna blommorna", "Tvätta"];
+const toDo = ["Städa", "Plugga Js", "Laga mat", "Vattna blommorna", "Tvätta"];
 const done = [];
 const listItem = document.getElementById("myList");
 const listDone = document.getElementById("listDone");

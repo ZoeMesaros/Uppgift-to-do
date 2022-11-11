@@ -2,37 +2,61 @@
 @use "variables" as v;
 
 body {
-    height: 100vh;
-    width: 100%;
-    background-image: url(/src/img/background.jpg);
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    border: 5px double black;
-}
-
-section {
-    display: block;
-    display: flex;
-    justify-content: center;
-    transform: translateY(150%);
+  width: 100%;
+  height: 100vh;
+  background-image: url(/src/img/notebook.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  .page1 {
+    width: 30%;
+    height: 90%;
+    transform: translateX(58%) translateY(7%);
+    h1 {
+      color: rgb(255, 0, 0);
+      font-family: "Sniglet", cursive;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      font-size: 50px;
+      text-align: center;
+      transform: translateY(90%);
+    }
+  }
 }
 
 #myList {
+  width: 25%;
+  height: 70%;
+  font-family: "Sniglet", cursive;
+  font-size: 40px;
+  transform: translateY(-103%) translateX(550);
+  line-height: 86px;
+}
+
+.page2 {
+  width: 23%;
+  height: 70%;
+  transform: translateX(240%) translateY(-203%);
+  h2 {
+    font-family: "Sniglet", cursive;
+    font-size: 35px;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 50px;
-    transform: translateY(40%);
+    transform: translateY(-120%);
+  }
 }
 
 #listDone {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding-left: 200px;
-    font-size: 50px;
-    transform: translateY(40%);
+  transform: translateX(10%);
+  font-family: "Sniglet", cursive;
+  font-size: 35px;
+}
+
+ul > li:nth-of-type(3n + 1) {
+  list-style-image: url("/src/img/starblue.png");
+}
+ul > li:nth-of-type(3n + 2) {
+  list-style-image: url("/src/img/stargreen.png");
+}
+ul > li:nth-of-type(3n + 3) {
+  list-style-image: url("/src/img/starpink.png");
 }
