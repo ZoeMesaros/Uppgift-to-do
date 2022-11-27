@@ -24,6 +24,13 @@ body {
   }
 }
 
+#sortButton {
+  width: 90px;
+  height: 40px;
+  transform: translateX(630px) translateY(25px);
+  font-family: "Sniglet", cursive;
+}
+
 .form {
   text-align: center;
   transform: translateY(170%);

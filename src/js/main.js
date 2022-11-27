@@ -15,8 +15,7 @@ function printTodoList() {
     if (todo.todoDone == true) {
       doneList.appendChild(todoLi);
       todoLi.style.textDecoration = "line-through";
-    }
-    else {
+    } else {
       todoList.appendChild(todoLi);
     }
   }
@@ -30,10 +29,8 @@ function pushtodo() {
   document.getElementById("inputText").value = "";
   todos.push(new Todo(inputText, false));
   printTodoList();
-
   for (let i = 0; i < todos.length; i++) {
     const element = todos[i];
-    
   }
 }
 
@@ -45,7 +42,6 @@ function handletodo(e) {
       element.todoDone = !element.todoDone;
     }
   }
-
   printTodoList();
 }
 
@@ -67,5 +63,21 @@ let todos = [
   new Todo("Laga mat", false),
 ];
 
-printTodoList();
+const sortButton = document.getElementById("sortButton");
+sortButton.addEventListener("click", todoSort);
 
+function todoSort() {
+  todos.sort(function (a, b) {
+    if (a.todoName < b.todoName) {
+      return -1;
+    }
+    if (a.todoName > b.todoName) {
+      return 1;
+    }
+    return 0;
+  });
+
+  printTodoList();
+}
+
+printTodoList();
