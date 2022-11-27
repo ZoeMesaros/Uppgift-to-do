@@ -1,38 +1,39 @@
-/* const toDo = ["Städa", "Plugga Js", "Laga mat", "Vattna blommorna", "Tvätta"];
-const done = [];
-const listItem = document.getElementById("myList");
-const listDone = document.getElementById("listDone");
-
-function handletodo(e) {
-  e.target.style.textDecoration = "line-through";
-  let node = e.target.cloneNode(true);
-  listDone.appendChild(node);
-  e.target.remove();
-}
-
-for (let i = 0; i < toDo.length; i++) {
-  let item = document.createElement("li");
-  item.addEventListener("click", handletodo);
-  item.appendChild(document.createTextNode(toDo[i]));
-  listItem.appendChild(item);
-}
- */
-
-function printTodoList () {
+function printTodoList() {
   let todoList = document.getElementById("todo-list");
+  let doneList = document.getElementById("todo-done");
   while (todoList.firstChild) {
     todoList.removeChild(todoList.firstChild);
   }
+  while (doneList.firstChild) {
+    doneList.removeChild(doneList.firstChild);
+  }
   for (let i = 0; i < todos.length; i++) {
     const todo = todos[i];
-    let todoList = document.getElementById("todo-list");
     let todoLi = document.createElement("li");
     todoLi.addEventListener("click", handletodo);
     todoLi.innerHTML = `${todo.todoName}`;
-    todoList.appendChild(todoLi);
     if (todo.todoDone == true) {
+      doneList.appendChild(todoLi);
       todoLi.style.textDecoration = "line-through";
     }
+    else {
+      todoList.appendChild(todoLi);
+    }
+  }
+}
+
+const myButton = document.getElementById("myButton");
+myButton.addEventListener("click", pushtodo);
+
+function pushtodo() {
+  const inputText = document.getElementById("inputText").value;
+  document.getElementById("inputText").value = "";
+  todos.push(new Todo(inputText, false));
+  printTodoList();
+
+  for (let i = 0; i < todos.length; i++) {
+    const element = todos[i];
+    
   }
 }
 
@@ -41,11 +42,11 @@ function handletodo(e) {
   for (let i = 0; i < todos.length; i++) {
     const element = todos[i];
     if (element.todoName === itemName) {
-      element.todoDone = true;
+      element.todoDone = !element.todoDone;
     }
   }
 
-printTodoList ()
+  printTodoList();
 }
 
 class Todo {
@@ -61,9 +62,10 @@ let todos = [
   new Todo("Gå ut med hunden", false),
   new Todo("Vattna blommorna", false),
   new Todo("Städa", false),
-  new Todo("Plugga Js", false),
+  new Todo("Plugga JS", false),
   new Todo("Tvätta", false),
   new Todo("Laga mat", false),
 ];
 
-printTodoList ();
+printTodoList();
+
