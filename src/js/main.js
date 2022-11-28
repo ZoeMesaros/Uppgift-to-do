@@ -25,8 +25,9 @@ const myButton = document.getElementById("myButton");
 myButton.addEventListener("click", pushtodo);
 
 function pushtodo() {
-  const inputText = document.getElementById("inputText").value;
+  let inputText = document.getElementById("inputText").value;
   document.getElementById("inputText").value = "";
+  inputText = inputText.substring(0, 1).toUpperCase() + inputText.substring(1);
   todos.push(new Todo(inputText, false));
   printTodoList();
   for (let i = 0; i < todos.length; i++) {
