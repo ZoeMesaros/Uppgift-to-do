@@ -2,80 +2,261 @@
 @use "variables" as v;
 
 body {
-  width: 100%;
-  height: 100vh;
-  background-image: url(/src/img/notebook.jpg);
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  overflow: hidden;
+  @include m.sm {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/src/img/notebook-paper.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  @include m.md {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/src/img/notebook.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
+  @include m.lg {
+    width: 100%;
+    height: 100vh;
+    background-image: url(/src/img/notebook.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+  }
   .page1 {
-    width: 30%;
-    height: 90%;
-    transform: translateX(58%) translateY(7%);
+    @include m.sm {
+      width: 50%;
+      height: 100vh;
+      transform: translateX(58%) translateY(5%);
+    }
+    @include m.md {
+      width: 40%;
+      height: 70%;
+      transform: translateX(12%) translateY(22%);
+    }
+    @include m.lg {
+      max-width: 30%;
+      max-height: 90%;
+      transform: translateX(58%) translateY(22%);
+    }
     h1 {
-      color: rgb(255, 0, 0);
-      font-family: "Sniglet", cursive;
-      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-      font-size: 50px;
-      text-align: center;
-      transform: translateY(90%);
+      @include m.sm {
+        color: rgb(255, 0, 0);
+        font-family: "Sniglet", cursive;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        font-size: 40px;
+        text-align: center;
+        transform: translateY(90%);
+      }
+      @include m.md {
+        color: red;
+        font-family: "Sniglet", cursive;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        font-size: 30px;
+        text-align: center;
+        transform: translateY(90%);
+      }
+      @include m.lg {
+        color: rgb(255, 0, 0);
+        font-family: "Sniglet", cursive;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        font-size: 240%;
+        text-align: center;
+        transform: translateY(-15%);
+      }
     }
   }
 }
 
 #sortButton {
-  width: 90px;
-  height: 40px;
-  transform: translateX(630px) translateY(25px);
-  font-family: "Sniglet", cursive;
+  @include m.sm {
+    width: 80px;
+    height: 35px;
+    transform: translateX(350%) translateY(-5%);
+    font-family: "Sniglet", cursive;
+  }
+  @include m.md {
+    width: 65px;
+    height: 30px;
+    transform: translateX(270px) translateY(-2px);
+    font-family: "Sniglet", cursive;
+  }
+  @include m.lg {
+    width: 70px;
+    height: 30px;
+    transform: translateX(430px) translateY(-20px);
+    font-family: "Sniglet", cursive;
+  }
 }
 
 .form {
-  text-align: center;
-  transform: translateY(170%);
+  @include m.sm {
+    display: flex;
+    position: relative;
+    width: 180%;
+    text-align: center;
+    transform: translateY(15px) translateX(-20px);
+  }
+  @include m.md {
+    width: 90%;
+    display: flex;
+    position: relative;
+    text-align: center;
+    transform: translateY(1250%) translateX(5%);
+  }
+  @include m.lg {
+    max-width: 90%;
+    display: flex;
+    position: relative;
+    text-align: center;
+    transform: translateY(1600%) translateX(25%);
+  }
   input {
-    width: 350px;
-    height: 50px;
-    font-family: "Sniglet", cursive;
-    font-size: 25px;
+    @include m.sm {
+      width: 320px;
+      height: 30px;
+      font-family: "Sniglet", cursive;
+      font-size: 25px;
+    }
+    @include m.md {
+      width: 250px;
+      height: 40px;
+      font-family: "Sniglet", cursive;
+      font-size: 25px;
+    }
+    @include m.lg {
+      width: 250px;
+      height: 40px;
+      font-family: "Sniglet", cursive;
+      font-size: 25px;
+    }
   }
   button {
-    width: 150px;
-    height: 50px;
-    font-family: "Sniglet", cursive;
-    font-size: 20px;
+    @include m.sm {
+      transform: translateY(-5%);
+      width: 50px;
+      height: 30px;
+      font-family: "Sniglet", cursive;
+      font-size: 20px;
+    }
+    @include m.md {
+      width: 80px;
+      height: 40px;
+      font-family: "Sniglet", cursive;
+      font-size: 20px;
+    }
+    @include m.lg {
+      width: 90px;
+      height: 40px;
+      font-family: "Sniglet", cursive;
+      font-size: 20px;
+    }
   }
 }
 
-
 #todo-list {
-  width: 85%;
-  height: 70%;
-  font-family: "Sniglet", cursive;
-  font-size: 40px;
-  transform: translateY(7%) translateX(15%);
-  line-height: 86px;
+  @include m.sm {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    font-family: "Sniglet", cursive;
+    transform: translateY(70px);
+    line-height: 50px;
+    font-size: 25px;
+  }
+  @include m.md {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    color: blue;
+    width: 85%;
+    height: 70%;
+    font-family: "Sniglet", cursive;
+    font-size: 25px;
+    transform: translateY(7%) translateX(15%);
+    line-height: 50px;
+  }
+  @include m.lg {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    max-width: 85%;
+    max-height: 70%;
+    font-family: "Sniglet", cursive;
+    font-size: 30px;
+    transform: translateY(7%) translateX(15%);
+    line-height: 65px;
+  }
 }
 
 .page2 {
-  width: 23%;
-  height: 70%;
-  transform: translateX(240%) translateY(-105%);
+  @include m.sm {
+    width: 80%;
+    height: 30%;
+    transform: translateX(15%) translateY(-105%);
+  }
+  @include m.md {
+    width: 35%;
+    height: 62%;
+    transform: translateX(165%) translateY(-75%);
+  }
+  @include m.lg {
+    width: 23%;
+    height: 70%;
+    transform: translateX(240%) translateY(-75%);
+  }
   h2 {
-    color: black;
-    font-family: "Sniglet", cursive;
-    font-size: 35px;
-    text-align: center;
-    transform: translateY(-120%);
+    @include m.sm {
+      color: black;
+      font-family: "Sniglet", cursive;
+      font-size: 35px;
+      text-align: center;
+      transform: translateY(-120%);
+    }
+    @include m.md {
+      color: black;
+      font-family: "Sniglet", cursive;
+      font-size: 25px;
+      text-align: center;
+      transform: translateY(-120%);
+    }
+    @include m.lg {
+      color: black;
+      font-family: "Sniglet", cursive;
+      font-size: 25px;
+      text-align: center;
+      transform: translateY(-120%);
+    }
   }
 }
 
 #todo-done {
-  transform: translateY(5%) translateX(10%);
-  font-family: "Sniglet", cursive;
-  font-size: 35px;
-  line-height: 86px;
+  @include m.sm {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-15%) translateX(10%);
+    font-family: "Sniglet", cursive;
+    font-size: 20px;
+    line-height: 50px;
+  }
+  @include m.md {
+    transform: translateY(5%) translateX(20%);
+    font-family: "Sniglet", cursive;
+    font-size: 20px;
+    line-height: 45px;
+  }
+  @include m.lg {
+    transform: translateY(5%) translateX(20%);
+    font-family: "Sniglet", cursive;
+    font-size: 20px;
+    line-height: 40px;
+  }
 }
 
 ul > li:nth-of-type(3n + 1) {
